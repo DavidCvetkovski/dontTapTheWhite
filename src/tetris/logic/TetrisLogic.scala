@@ -108,9 +108,9 @@ class ITetromino(anchor: Point, cellType: CellType) extends Tetromino(anchor, ce
 }
 
 case class EmptyTetromino(override val anchor: Point = Point(-1, -1), override val cellType: CellType = Empty) extends Tetromino(anchor, cellType) {
-  override def shape: Seq[Point] = Seq.empty // Return an empty sequence for the shape
-  override def rotateLeft(): Tetromino = this // No rotation for an empty tetromino
-  override def rotateRight(): Tetromino = this // No rotation for an empty tetromino
+  override def shape: Seq[Point] = Seq.empty
+  override def rotateLeft(): Tetromino = this
+  override def rotateRight(): Tetromino = this
 }
 
 case class GameState(spawnNewTetromino : Boolean,
@@ -254,7 +254,6 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def doHardDrop(): Unit = {
-//    spawnNewTetrominoIfNeeded()
   }
 
   // TODO implement me

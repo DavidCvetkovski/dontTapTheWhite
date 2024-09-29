@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.PlacementTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-09-29T12:46:54" hostname="Mac.home" time="0.055">
+<testsuite name="tetris.PlacementTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-09-29T12:58:57" hostname="Mac.home" time="0.041">
   <properties/>
-  <testcase name="testPlacementI" classname="tetris.PlacementTests" time="0.043"/>
+  <testcase name="testPlacementI" classname="tetris.PlacementTests" time="0.03"/>
   <testcase name="testPlacementIEven" classname="tetris.PlacementTests" time="0.001"/>
   <testcase name="testPlacementJ" classname="tetris.PlacementTests" time="0.001"/>
   <testcase name="testPlacementL" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementO" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementO" classname="tetris.PlacementTests" time="0.001"/>
   <testcase name="testPlacementOEven" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementS" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementT" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementS" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementT" classname="tetris.PlacementTests" time="0.001"/>
   <testcase name="testPlacementZ" classname="tetris.PlacementTests" time="0.001"/>
   <system-out><![CDATA[(GRIDDIMS: ,7,4)
 (width / 2,3)
