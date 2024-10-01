@@ -9,23 +9,10 @@ abstract class Tetromino(val anchor: Point, val cellType: CellType) {
   def rotateLeft(): Tetromino
   def rotateRight(): Tetromino
 
-  def moveLeft(): Tetromino = {
-    move(-1, 0)
-  }
-  def moveDown(): Tetromino = {
-    move(0, 1)
-  }
-  def moveRight(): Tetromino = {
-    move(1, 0)
-  }
+  def moveLeft(): Tetromino
+  def moveDown(): Tetromino
+  def moveRight(): Tetromino
 
-  private def move(deltaX: Int, deltaY: Int): Tetromino = {
-    this match {
-      case _: StandardTetromino => new StandardTetromino(Point(anchor.x + deltaX, anchor.y + deltaY), cellType)
-      case _: OTetromino => new OTetromino(Point(anchor.x + deltaX, anchor.y + deltaY), cellType)
-      case _: ITetromino => new ITetromino(Point(anchor.x + deltaX, anchor.y + deltaY), cellType)
-    }
-  }
 }
 
 
@@ -51,6 +38,8 @@ class StandardTetromino(anchor : Point, cellType : CellType) extends Tetromino(a
   }
 
   override def rotateRight(): StandardTetromino = {
+//    println("ROTATING AROUND ANCHOR: ", anchor)
+
     val newShape = shape.map { case Point(x, y) =>
       val relativeX = x - anchor.x
       val relativeY = y - anchor.y
@@ -58,6 +47,30 @@ class StandardTetromino(anchor : Point, cellType : CellType) extends Tetromino(a
     }
 
     new StandardTetromino(anchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveDown(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x, y + 1)}
+    val newAnchor = Point(anchor.x, anchor.y + 1)
+    new StandardTetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveLeft(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x - 1, y)}
+    val newAnchor = Point(anchor.x - 1, anchor.y)
+    new StandardTetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveRight(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x + 1, y)}
+    val newAnchor = Point(anchor.x + 1, anchor.y)
+    new StandardTetromino(newAnchor, cellType) {
       override def shape: Seq[Point] = newShape
     }
   }
@@ -72,6 +85,29 @@ class OTetromino(anchor: Point, cellType: CellType) extends Tetromino(anchor, ce
   )
   override def rotateLeft(): OTetromino = this
   override def rotateRight(): OTetromino = this
+  override def moveDown(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x, y + 1)}
+    val newAnchor = Point(anchor.x, anchor.y + 1)
+    new OTetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveLeft(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x - 1, y)}
+    val newAnchor = Point(anchor.x - 1, anchor.y)
+    new OTetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveRight(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x + 1, y)}
+    val newAnchor = Point(anchor.x + 1, anchor.y)
+    new OTetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
 }
 
 class ITetromino(anchor: Point, cellType: CellType) extends Tetromino(anchor, cellType) {
@@ -86,7 +122,7 @@ class ITetromino(anchor: Point, cellType: CellType) extends Tetromino(anchor, ce
     val newShape = shape.map { case Point(x, y) =>
       val relativeX = x - anchor.x
       val relativeY = y - anchor.y
-      Point(anchor.x + relativeY, anchor.y - relativeX)
+      Point(anchor.x + relativeY, anchor.y - relativeX + 1)
     }
 
     new ITetromino(anchor, cellType) {
@@ -105,12 +141,40 @@ class ITetromino(anchor: Point, cellType: CellType) extends Tetromino(anchor, ce
       override def shape: Seq[Point] = newShape
     }
   }
+
+  override def moveDown(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x, y + 1)}
+    val newAnchor = Point(anchor.x, anchor.y + 1)
+    new ITetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveLeft(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x - 1, y)}
+    val newAnchor = Point(anchor.x - 1, anchor.y)
+    new ITetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
+
+  override def moveRight(): Tetromino = {
+    val newShape = shape.map{case Point(x, y) => Point(x + 1, y)}
+    val newAnchor = Point(anchor.x + 1, anchor.y)
+    new ITetromino(newAnchor, cellType) {
+      override def shape: Seq[Point] = newShape
+    }
+  }
 }
 
 case class EmptyTetromino(override val anchor: Point = Point(-1, -1), override val cellType: CellType = Empty) extends Tetromino(anchor, cellType) {
   override def shape: Seq[Point] = Seq.empty
   override def rotateLeft(): Tetromino = this
   override def rotateRight(): Tetromino = this
+  override def moveDown(): Tetromino = this
+  override def moveLeft(): Tetromino = this
+  override def moveRight(): Tetromino = this
+
 }
 
 case class GameState(spawnNewTetromino : Boolean,
@@ -153,17 +217,21 @@ class TetrisLogic(val randomGen: RandomGenerator,
     if (n % 2 == 1) true else false
   }
 
-  val anchor: Point = Point(if (isOdd(gridDims.width)) gridDims.width / 2 else gridDims.width / 2 - 1, 1)
+  private val anchor: Point = Point(if (isOdd(gridDims.width)) gridDims.width / 2 else gridDims.width / 2 - 1, 1)
 
-  val cellType : CellType = randomGen.randomInt(7) match {
-    case 0 => ICell
-    case 1 => JCell
-    case 2 => LCell
-    case 3 => OCell
-    case 4 => SCell
-    case 5 => TCell
-    case 6 => ZCell
+  private def getRandomCellType() : CellType = {
+    randomGen.randomInt(7) match {
+      case 0 => ICell
+      case 1 => JCell
+      case 2 => LCell
+      case 3 => OCell
+      case 4 => SCell
+      case 5 => TCell
+      case 6 => ZCell
+    }
   }
+
+  val cellType: CellType = getRandomCellType()
 
   private var gameStates : List[GameState] = List(GameState(
     spawnNewTetromino = true,
@@ -178,13 +246,44 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
 
 
-  println("ZE SHAPEE ", gameStates.last.tetromino.shape)
+//  println("ZE SHAPEE ", gameStates.last.tetromino.shape)
 
 
+  private def isNotValidMove(shape: Seq[Point], board: Seq[Seq[CellType]]): Boolean = {
+
+    shape.exists { case Point(x, y) =>
+      if (x < 0 || x >= board.head.length || y < 0 || y >= board.length)
+        true
+      else
+        board(y)(x) != Empty
+    }
+  }
+//
+//  private def touchingGround(shape: Seq[Point], board: Seq[Seq[CellType]]): Boolean = {
+//    val maxY = shape.map(_.y).max
+//    val lowestPoints = shape.filter(_.y == maxY)
+//    if (groundUnder(lowestPoints.map{case Point(x, y) => Point(x, y)}, board))
+//      true
+//    else
+//      false
+//  }
+//
+//  private def groundUnder(points: Seq[Point], board: Seq[Seq[CellType]]) : Boolean = {
+//    points.exists { case Point(x, y) =>
+//      if (x < 0 || x >= board.head.length || y < 0 || y >= board.length)
+//        true
+//      else
+//        board(y)(x) != Empty
+//    }
+//  }
 
 
   // TODO implement me
   def rotateLeft(): Unit = {
+
+    if (isNotValidMove(gameStates.last.tetromino.rotateLeft().shape, gameStates.last.cellGrid))
+      return
+
     val rotatedTetromino = gameStates.last.tetromino.rotateLeft()
 
     println("ZE SHAPEE ", rotatedTetromino.shape)
@@ -200,6 +299,10 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def rotateRight(): Unit = {
+
+    if (isNotValidMove(gameStates.last.tetromino.rotateRight().shape, gameStates.last.cellGrid))
+      return
+
     val rotatedTetromino = gameStates.last.tetromino.rotateRight()
 
     println("ZE SHAPEE ", rotatedTetromino.shape)
@@ -215,45 +318,101 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def moveLeft(): Unit = {
-    val newAnchor = Point(gameStates.last.anchor.x - 1, gameStates.last.anchor.y)
+
+    if (isNotValidMove(gameStates.last.tetromino.moveLeft().shape, gameStates.last.cellGrid))
+      return
+//    val newAnchor = Point(gameStates.last.anchor.x - 1, gameStates.last.anchor.y)
     val movedTetromino = gameStates.last.tetromino.moveLeft()
+
+
+
     gameStates = gameStates :+ GameState(
       spawnNewTetromino = false,
       cellGrid = gameStates.last.cellGrid,
       currentTetrominoCellType = gameStates.last.currentTetrominoCellType,
-      anchor = newAnchor,
+      anchor = movedTetromino.anchor,
       tetromino = movedTetromino
     )
   }
 
   // TODO implement me
   def moveRight(): Unit = {
-    val newAnchor = Point(gameStates.last.anchor.x - 1, gameStates.last.anchor.y)
+
+    if (isNotValidMove(gameStates.last.tetromino.moveRight().shape, gameStates.last.cellGrid))
+      return
+//    val newAnchor = Point(gameStates.last.anchor.x - 1, gameStates.last.anchor.y)
     val movedTetromino = gameStates.last.tetromino.moveRight()
     gameStates = gameStates :+ GameState(
       spawnNewTetromino = false,
       cellGrid = gameStates.last.cellGrid,
       currentTetrominoCellType = gameStates.last.currentTetrominoCellType,
-      anchor = newAnchor,
+      anchor = movedTetromino.anchor,
       tetromino = movedTetromino
     )
   }
 
   // TODO implement me
   def moveDown(): Unit = {
-    val newAnchor = Point(gameStates.last.anchor.x - 1, gameStates.last.anchor.y)
+
+//    if (touchingGround(gameStates.last.tetromino.moveDown().shape, gameStates.last.cellGrid)) {
+//      println(" TOUCHING GROUNSNSNSNNSNS")
+//      return
+//    }
+
+
+
+    if (isNotValidMove(gameStates.last.tetromino.moveDown().shape, gameStates.last.cellGrid)) {
+      val lastShape = gameStates.last.tetromino.shape
+      val lastTetrominoCellType = gameStates.last.currentTetrominoCellType
+      val newCellGrid = gameStates.last.cellGrid.zipWithIndex.map { case (row, y) =>
+        row.zipWithIndex.map { case (cell, x) =>
+
+          if (lastShape.contains(Point(x, y))) lastTetrominoCellType else cell
+        }
+      }
+      gameStates = gameStates :+ GameState(
+        spawnNewTetromino = true,
+        cellGrid = newCellGrid,
+        currentTetrominoCellType = gameStates.last.currentTetrominoCellType,
+        anchor = gameStates.last.anchor,
+        tetromino = gameStates.last.tetromino
+      )
+
+      spawnNewTetromino()
+
+      return
+    }
+    //    val newAnchor = Point(gameStates.last.anchor.x - 1, gameStates.last.anchor.y)
     val movedTetromino = gameStates.last.tetromino.moveDown()
     gameStates = gameStates :+ GameState(
       spawnNewTetromino = false,
       cellGrid = gameStates.last.cellGrid,
       currentTetrominoCellType = gameStates.last.currentTetrominoCellType,
-      anchor = newAnchor,
+      anchor = movedTetromino.anchor,
       tetromino = movedTetromino
     )
   }
 
+  private def spawnNewTetromino() : Unit = {
+    val newCellType = getRandomCellType()
+
+    gameStates = gameStates :+ gameStates.last.copy(spawnNewTetromino = true,
+      currentTetrominoCellType = newCellType,
+      anchor = anchor,
+      tetromino = EmptyTetromino()
+    )
+
+    if (gameStates.last.tetromino == EmptyTetromino()) {
+      gameStates = gameStates :+ gameStates.last.copy(tetromino = gameStates.last.initialTetromino)
+    }
+
+  }
+
   // TODO implement me
   def doHardDrop(): Unit = {
+    while (!gameStates.last.spawnNewTetromino) {
+      moveDown()
+    }
   }
 
   // TODO implement me

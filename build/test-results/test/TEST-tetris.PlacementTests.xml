@@ -1,42 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.PlacementTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-09-29T12:58:57" hostname="Mac.home" time="0.041">
+<testsuite name="tetris.PlacementTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-10-01T14:36:24" hostname="feweb61044.feweb.vu.nl" time="0.062">
   <properties/>
-  <testcase name="testPlacementI" classname="tetris.PlacementTests" time="0.03"/>
-  <testcase name="testPlacementIEven" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementJ" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementL" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementO" classname="tetris.PlacementTests" time="0.001"/>
+  <testcase name="testPlacementI" classname="tetris.PlacementTests" time="0.044"/>
+  <testcase name="testPlacementIEven" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementJ" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementL" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementO" classname="tetris.PlacementTests" time="0.002"/>
   <testcase name="testPlacementOEven" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementS" classname="tetris.PlacementTests" time="0.002"/>
-  <testcase name="testPlacementT" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementZ" classname="tetris.PlacementTests" time="0.001"/>
+  <testcase name="testPlacementS" classname="tetris.PlacementTests" time="0.001"/>
+  <testcase name="testPlacementT" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementZ" classname="tetris.PlacementTests" time="0.002"/>
   <system-out><![CDATA[(GRIDDIMS: ,7,4)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(2,1), Point(3,1), Point(4,1), Point(5,1)))
 (GRIDDIMS: ,6,4)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(3,1), Point(4,1)))
 (GRIDDIMS: ,7,3)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(3,1), Point(2,1), Point(4,1), Point(2,0)))
 (GRIDDIMS: ,6,3)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(2,1), Point(1,1), Point(3,1), Point(3,0)))
 (GRIDDIMS: ,7,3)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(3,0), Point(4,0), Point(3,1), Point(4,1)))
 (GRIDDIMS: ,6,3)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(2,0), Point(3,0), Point(2,1), Point(3,1)))
 (GRIDDIMS: ,5,3)
 (width / 2,2)
-(ZE SHAPEE ,List(Point(2,1), Point(1,1), Point(2,0), Point(3,0)))
 (GRIDDIMS: ,8,3)
 (width / 2,4)
-(ZE SHAPEE ,List(Point(3,1), Point(2,1), Point(4,1), Point(3,0)))
 (GRIDDIMS: ,6,3)
 (width / 2,3)
-(ZE SHAPEE ,List(Point(2,1), Point(3,1), Point(2,0), Point(1,0)))
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

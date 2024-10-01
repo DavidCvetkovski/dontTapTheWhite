@@ -97,7 +97,7 @@ class TetrisGame extends GameBase {
 
   def updateState(): Unit = {
     if (updateTimer.timeForNextFrame()) {
-      gameLogic.moveDown()
+//      gameLogic.moveDown()
       updateTimer.advanceFrame()
     }
   }
