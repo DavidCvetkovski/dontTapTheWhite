@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.SpawnTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-01T14:36:24" hostname="feweb61044.feweb.vu.nl" time="0.004">
+<testsuite name="tetris.SpawnTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-02T10:52:48" hostname="feweb61044.feweb.vu.nl" time="0.005">
   <properties/>
-  <testcase name="testSpawn" classname="tetris.SpawnTests" time="0.001"/>
+  <testcase name="testSpawn" classname="tetris.SpawnTests" time="0.002"/>
   <testcase name="testSpawn2" classname="tetris.SpawnTests" time="0.002"/>
   <system-out><![CDATA[(GRIDDIMS: ,5,4)
 (width / 2,2)

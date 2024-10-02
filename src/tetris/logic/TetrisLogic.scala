@@ -181,7 +181,8 @@ case class GameState(spawnNewTetromino : Boolean,
                      cellGrid: Seq[Seq[CellType]],
                      currentTetrominoCellType: CellType,
                      anchor: Point,
-                     tetromino: Tetromino = new EmptyTetromino()) {
+                     tetromino: Tetromino = new EmptyTetromino(),
+                     gameOver : Boolean = false) {
   val initialTetromino: Tetromino = {
     currentTetrominoCellType match {
       case ICell => new ITetromino(anchor, ICell)
@@ -280,6 +281,8 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def rotateLeft(): Unit = {
+    if (isGameOver)
+      return
 
     if (isNotValidMove(gameStates.last.tetromino.rotateLeft().shape, gameStates.last.cellGrid))
       return
@@ -299,6 +302,8 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def rotateRight(): Unit = {
+    if (isGameOver)
+      return
 
     if (isNotValidMove(gameStates.last.tetromino.rotateRight().shape, gameStates.last.cellGrid))
       return
@@ -318,6 +323,8 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def moveLeft(): Unit = {
+    if (isGameOver)
+      return
 
     if (isNotValidMove(gameStates.last.tetromino.moveLeft().shape, gameStates.last.cellGrid))
       return
@@ -337,6 +344,9 @@ class TetrisLogic(val randomGen: RandomGenerator,
 
   // TODO implement me
   def moveRight(): Unit = {
+
+    if (isGameOver)
+      return
 
     if (isNotValidMove(gameStates.last.tetromino.moveRight().shape, gameStates.last.cellGrid))
       return
@@ -358,7 +368,8 @@ class TetrisLogic(val randomGen: RandomGenerator,
 //      println(" TOUCHING GROUNSNSNSNNSNS")
 //      return
 //    }
-
+    if (isGameOver)
+      return
 
 
     if (isNotValidMove(gameStates.last.tetromino.moveDown().shape, gameStates.last.cellGrid)) {
@@ -378,6 +389,10 @@ class TetrisLogic(val randomGen: RandomGenerator,
         tetromino = gameStates.last.tetromino
       )
 
+      gameStates = gameStates :+ gameStates.last.copy(cellGrid = updatedCellGrid(gameStates.last.cellGrid))
+
+
+
       spawnNewTetromino()
 
       return
@@ -391,6 +406,30 @@ class TetrisLogic(val randomGen: RandomGenerator,
       anchor = movedTetromino.anchor,
       tetromino = movedTetromino
     )
+
+
+
+  }
+
+  private def gameOver(shape : Seq[Point], board : Seq[Seq[CellType]]) : Boolean = {
+    shape.exists{case Point(x, y) => board(y)(x) != Empty}
+  }
+
+  private def updatedCellGrid(cellGrid : Seq[Seq[CellType]]) : Seq[Seq[CellType]] = {
+
+    val fullRowIndices = cellGrid.zipWithIndex.collect {
+      case (row, index) if !row.contains(Empty) => index
+    }
+
+    removeFullRows(cellGrid, fullRowIndices)
+
+  }
+
+  private def removeFullRows(cellGrid : Seq[Seq[CellType]], fullRowIndices : Seq[Int]) : Seq[Seq[CellType]] = {
+    val numCols = if (cellGrid.nonEmpty) cellGrid.head.length else 0
+    val emptyRows = Seq.fill(fullRowIndices.length)(Seq.fill(numCols)(Empty))
+
+    emptyRows ++ cellGrid.zipWithIndex.filterNot { case (_, index) => fullRowIndices.contains(index) }.map(_._1)
   }
 
   private def spawnNewTetromino() : Unit = {
@@ -401,6 +440,10 @@ class TetrisLogic(val randomGen: RandomGenerator,
       anchor = anchor,
       tetromino = EmptyTetromino()
     )
+
+    if (gameOver(gameStates.last.initialTetromino.shape, gameStates.last.cellGrid)) {
+      gameStates = gameStates.tail :+ gameStates.last.copy(gameOver = true)
+    }
 
     if (gameStates.last.tetromino == EmptyTetromino()) {
       gameStates = gameStates :+ gameStates.last.copy(tetromino = gameStates.last.initialTetromino)
@@ -416,7 +459,7 @@ class TetrisLogic(val randomGen: RandomGenerator,
   }
 
   // TODO implement me
-  def isGameOver: Boolean = false
+  def isGameOver: Boolean = gameStates.last.gameOver
 
   // TODO implement me
   def getCellType(p : Point): CellType = {

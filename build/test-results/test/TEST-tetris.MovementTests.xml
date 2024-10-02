@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.MovementTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-01T14:36:24" hostname="feweb61044.feweb.vu.nl" time="0.009">
+<testsuite name="tetris.MovementTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-02T10:52:48" hostname="feweb61044.feweb.vu.nl" time="0.01">
   <properties/>
   <testcase name="testMovement" classname="tetris.MovementTests" time="0.005"/>
-  <testcase name="testMovement2" classname="tetris.MovementTests" time="0.004"/>
+  <testcase name="testMovement2" classname="tetris.MovementTests" time="0.005"/>
   <system-out><![CDATA[(GRIDDIMS: ,6,4)
 (width / 2,3)
 (GRIDDIMS: ,7,4)

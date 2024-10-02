@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.RotationTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-10-01T14:36:24" hostname="feweb61044.feweb.vu.nl" time="0.02">
+<testsuite name="tetris.RotationTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-10-02T10:52:48" hostname="feweb61044.feweb.vu.nl" time="0.023">
   <properties/>
-  <testcase name="testIRotations" classname="tetris.RotationTests" time="0.005"/>
+  <testcase name="testIRotations" classname="tetris.RotationTests" time="0.004"/>
   <testcase name="testJRotations" classname="tetris.RotationTests" time="0.003"/>
-  <testcase name="testLRotations" classname="tetris.RotationTests" time="0.002"/>
-  <testcase name="testORotations" classname="tetris.RotationTests" time="0.002"/>
-  <testcase name="testSRotations" classname="tetris.RotationTests" time="0.002"/>
+  <testcase name="testLRotations" classname="tetris.RotationTests" time="0.003"/>
+  <testcase name="testORotations" classname="tetris.RotationTests" time="0.003"/>
+  <testcase name="testSRotations" classname="tetris.RotationTests" time="0.003"/>
   <testcase name="testTRotations" classname="tetris.RotationTests" time="0.002"/>
   <testcase name="testZRotations" classname="tetris.RotationTests" time="0.002"/>
   <system-out><![CDATA[(GRIDDIMS: ,4,4)

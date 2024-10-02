@@ -84,6 +84,13 @@
 B(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
 B(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,1)))
 B(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
+B(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,1)))
+B(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(0,1), Point(1,2)))
+B(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(1,0), Point(0,1)))
+B(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
+B(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,1)))
+B(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(0,1), Point(1,2)))
+B(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(1,0), Point(0,1)))
 (GRIDDIMS: ,7,3)
 (width / 2,3)
 (GRIDDIMS: ,6,3)
@@ -137,7 +144,6 @@
 35(GRIDDIMS: ,4,4)
 35(width / 2,2)
 35B(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,0)))
-35B(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
 36(GRIDDIMS: ,4,4)
 36(width / 2,2)
 87(GRIDDIMS: ,5,9)
@@ -148,6 +154,9 @@
 87B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,0)))
 87B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(3,1), Point(3,2)))
 87B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,2)))
+87B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,0)))
+87B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(4,1), Point(4,2)))
+87B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
 89(GRIDDIMS: ,8,11)
 89(width / 2,4)
 89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
@@ -159,10 +168,36 @@
 89B(ZE SHAPEE ,List(Point(5,1), Point(5,0), Point(5,2), Point(6,1)))
 89B(ZE SHAPEE ,List(Point(5,1), Point(6,1), Point(4,1), Point(5,2)))
 89B(ZE SHAPEE ,List(Point(4,1), Point(4,0), Point(5,1), Point(5,2)))
-89B(ZE SHAPEE ,List(Point(2,2), Point(2,1), Point(3,2), Point(3,3)))
-89B(ZE SHAPEE ,List(Point(1,2), Point(2,2), Point(1,3), Point(0,3)))
-89B(ZE SHAPEE ,List(Point(1,2), Point(1,3), Point(0,2), Point(0,1)))
-89B(ZE SHAPEE ,List(Point(3,3), Point(3,2), Point(3,4), Point(4,3)))
+89B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,1)))
+89B(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(0,1), Point(1,2)))
+89B(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(1,0), Point(0,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(4,1), Point(4,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(4,1), Point(2,1), Point(2,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(3,0), Point(2,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,0)))
+89B(ZE SHAPEE ,List(Point(4,1), Point(5,1), Point(3,1), Point(5,2)))
+89B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(4,1), Point(2,1), Point(4,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(3,0), Point(2,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(4,1), Point(4,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(4,1), Point(2,1), Point(3,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(3,0), Point(2,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(2,1), Point(4,1), Point(3,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(4,1), Point(2,1), Point(3,2)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(3,0), Point(2,1)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
+89B(ZE SHAPEE ,List(Point(4,0), Point(4,1), Point(4,2), Point(4,3)))
+89B(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(2,1), Point(2,0)))
+89B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(4,1), Point(4,2)))
 8:(GRIDDIMS: ,6,10)
 8:(width / 2,3)
 8:B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,0)))
@@ -181,6 +216,8 @@
 8:B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(3,0), Point(2,2)))
 8:B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,1)))
 8:B(ZE SHAPEE ,List(Point(3,1), Point(4,1), Point(2,1), Point(3,2)))
+8:B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(3,1), Point(3,2)))
+8:B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,0)))
 8;(GRIDDIMS: ,5,9)
 8;(width / 2,2)
 8;(GRIDDIMS: ,8,11)
@@ -193,6 +230,13 @@
 8;B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,0)))
 8;B(ZE SHAPEE ,List(Point(4,0), Point(4,1), Point(4,2), Point(4,3)))
 8;B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(3,1), Point(3,2)))
+8;B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,2)))
+8;B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,0)))
+8;B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(4,1), Point(4,2)))
+8;B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(4,1), Point(4,0)))
+8;B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,2)))
+8;B(ZE SHAPEE ,List(Point(5,1), Point(6,1), Point(4,1), Point(4,2)))
+8;B(ZE SHAPEE ,List(Point(5,1), Point(5,2), Point(5,0), Point(4,0)))
 8<(GRIDDIMS: ,8,11)
 8<(width / 2,4)
 8<(GRIDDIMS: ,6,10)
@@ -217,5 +261,15 @@
 8<B(ZE SHAPEE ,List(Point(2,1), Point(3,1), Point(1,1), Point(3,2)))
 8<B(ZE SHAPEE ,List(Point(5,1), Point(5,2), Point(5,0), Point(4,0)))
 8<B(ZE SHAPEE ,List(Point(3,1), Point(3,2), Point(3,0), Point(2,2)))
-= You got 36/50 points!
-= 7Your base grade for the tetris exercise will be : 3,96
+8<B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,1)))
+8<B(ZE SHAPEE ,List(Point(3,1), Point(4,1), Point(2,1), Point(3,2)))
+8<B(ZE SHAPEE ,List(Point(5,1), Point(5,0), Point(5,2), Point(6,1)))
+8<B(ZE SHAPEE ,List(Point(5,1), Point(6,1), Point(4,1), Point(5,2)))
+8<B(ZE SHAPEE ,List(Point(4,1), Point(4,0), Point(5,1), Point(5,2)))
+8<B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(3,1), Point(3,2)))
+8<B(ZE SHAPEE ,List(Point(3,1), Point(3,0), Point(3,2), Point(4,0)))
+8<B(ZE SHAPEE ,List(Point(2,1), Point(2,0), Point(2,2), Point(3,1)))
+8<B(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(0,1), Point(1,2)))
+8<B(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(1,0), Point(0,1)))
+= You got 50/50 points!
+= 7Your base grade for the tetris exercise will be : 5,50
