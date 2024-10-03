@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.DropTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-02T10:52:48" hostname="feweb61044.feweb.vu.nl" time="0.011">
+<testsuite name="tetris.DropTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-02T12:20:25" hostname="feweb61044.feweb.vu.nl" time="0.01">
   <properties/>
-  <testcase name="testDrop" classname="tetris.DropTests" time="0.011"/>
-  <system-out><![CDATA[(GRIDDIMS: ,4,6)
-(width / 2,2)
-(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
-(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,1)))
-(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
-(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,1)))
-(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(0,1), Point(1,2)))
-(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(1,0), Point(0,1)))
-(ZE SHAPEE ,List(Point(2,0), Point(2,1), Point(2,2), Point(2,3)))
-(ZE SHAPEE ,List(Point(1,1), Point(1,0), Point(1,2), Point(2,1)))
-(ZE SHAPEE ,List(Point(1,1), Point(2,1), Point(0,1), Point(1,2)))
-(ZE SHAPEE ,List(Point(1,1), Point(1,2), Point(1,0), Point(0,1)))
-]]></system-out>
+  <testcase name="testDrop" classname="tetris.DropTests" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
