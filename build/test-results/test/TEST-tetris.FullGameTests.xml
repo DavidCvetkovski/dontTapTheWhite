@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.FullGameTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-10-02T12:20:25" hostname="feweb61044.feweb.vu.nl" time="0.136">
+<testsuite name="tetris.FullGameTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-10-06T13:10:00" hostname="Davids-MacBook-Air.local" time="0.14">
   <properties/>
-  <testcase name="testGame5x9" classname="tetris.FullGameTests" time="0.012"/>
-  <testcase name="testGame8x11" classname="tetris.FullGameTests" time="0.079"/>
-  <testcase name="testGame6x10" classname="tetris.FullGameTests" time="0.014"/>
-  <testcase name="testInterleave5x9and8x11" classname="tetris.FullGameTests" time="0.012"/>
+  <testcase name="testGame5x9" classname="tetris.FullGameTests" time="0.014"/>
+  <testcase name="testGame8x11" classname="tetris.FullGameTests" time="0.081"/>
+  <testcase name="testGame6x10" classname="tetris.FullGameTests" time="0.013"/>
+  <testcase name="testInterleave5x9and8x11" classname="tetris.FullGameTests" time="0.013"/>
   <testcase name="testInterleave8x11and6x10" classname="tetris.FullGameTests" time="0.018"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.DropTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-02T12:20:25" hostname="feweb61044.feweb.vu.nl" time="0.01">
+<testsuite name="tetris.DropTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-06T13:10:00" hostname="Davids-MacBook-Air.local" time="0.013">
   <properties/>
-  <testcase name="testDrop" classname="tetris.DropTests" time="0.01"/>
+  <testcase name="testDrop" classname="tetris.DropTests" time="0.013"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

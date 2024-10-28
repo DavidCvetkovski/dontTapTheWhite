@@ -29,10 +29,18 @@ repositories {
     maven {
         url "https://jitpack.io"
     }
+
 }
 
 sourceSets.main.scala.srcDirs = ['src']
 sourceSets.test.scala.srcDirs = ['test']
+//sourceSets {
+//    main {
+//        resources {
+//            srcDirs = ['src/main/resources']
+//        }
+//    }
+//}
 
 dependencies {
     implementation "com.github.micycle1:processing-core-4:4.3"
@@ -46,6 +54,7 @@ dependencies {
 
     testImplementation('org.junit.vintage:junit-vintage-engine:5.9.0')
     testImplementation("org.scalatest:scalatest_${scalaMajorVersion}:3.0.9")
+    implementation 'net.compartmental.code:minim:2.2.2'
 }
 
 task zip(type: Zip) {

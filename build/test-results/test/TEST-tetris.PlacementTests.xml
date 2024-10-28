@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tetris.PlacementTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-10-02T12:20:24" hostname="feweb61044.feweb.vu.nl" time="0.057">
+<testsuite name="tetris.PlacementTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-10-06T13:10:00" hostname="Davids-MacBook-Air.local" time="0.058">
   <properties/>
-  <testcase name="testPlacementI" classname="tetris.PlacementTests" time="0.044"/>
+  <testcase name="testPlacementI" classname="tetris.PlacementTests" time="0.042"/>
   <testcase name="testPlacementIEven" classname="tetris.PlacementTests" time="0.001"/>
   <testcase name="testPlacementJ" classname="tetris.PlacementTests" time="0.002"/>
   <testcase name="testPlacementL" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementO" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementOEven" classname="tetris.PlacementTests" time="0.001"/>
+  <testcase name="testPlacementO" classname="tetris.PlacementTests" time="0.002"/>
+  <testcase name="testPlacementOEven" classname="tetris.PlacementTests" time="0.002"/>
   <testcase name="testPlacementS" classname="tetris.PlacementTests" time="0.001"/>
-  <testcase name="testPlacementT" classname="tetris.PlacementTests" time="0.001"/>
+  <testcase name="testPlacementT" classname="tetris.PlacementTests" time="0.002"/>
   <testcase name="testPlacementZ" classname="tetris.PlacementTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
